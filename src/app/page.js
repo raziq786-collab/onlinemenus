@@ -11,7 +11,7 @@ function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-[#fffcf7]/90 backdrop-blur-md border-b border-ink-100">
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a href="#" className="font-display text-2xl font-semibold text-ink-900">
-          Menus<span className="text-brand-500">Online</span>
+          Online<span className="text-brand-500">Menus</span>
         </a>
         
         <div className="hidden md:flex items-center gap-8">
@@ -627,7 +627,7 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <span className="font-display text-2xl font-semibold">
-              Menus<span className="text-brand-500">Online</span>
+              Online<span className="text-brand-500">Menus</span>
             </span>
             <p className="text-ink-400 mt-1">Websites for takeaways in Birmingham</p>
           </div>
