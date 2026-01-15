@@ -452,11 +452,35 @@ function FAQ() {
 // Contact Section
 function Contact() {
   const [submitted, setSubmitted] = useState(false)
-  
-  const handleSubmit = (e) => {
+  const [submitting, setSubmitting] = useState(false)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // In production, this would send to your backend
-    setSubmitted(true)
+    setSubmitting(true)
+
+    const form = e.target
+    const formData = new FormData(form)
+
+    try {
+      const response = await fetch('https://formspree.io/f/xjggkwoq', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+
+      if (response.ok) {
+        setSubmitted(true)
+        form.reset()
+      } else {
+        alert('Something went wrong. Please try again.')
+      }
+    } catch (error) {
+      alert('Something went wrong. Please try again.')
+    } finally {
+      setSubmitting(false)
+    }
   }
   
   return (
@@ -513,50 +537,57 @@ function Contact() {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
+                <input type="hidden" name="_replyto" value="hello@onlinemenus.co.uk" />
+                <input type="hidden" name="_subject" value="New enquiry from OnlineMenus website" />
                 <div>
                   <label className="block text-sm font-medium mb-2">Your name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
+                    name="name"
                     required
                     className="w-full px-4 py-3 rounded-xl border border-ink-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     placeholder="Ali Khan"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium mb-2">Takeaway name</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
+                    name="takeaway"
                     required
                     className="w-full px-4 py-3 rounded-xl border border-ink-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     placeholder="Best Kebab House"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium mb-2">Phone or email</label>
-                  <input 
-                    type="text" 
+                  <input
+                    type="text"
+                    name="contact"
                     required
                     className="w-full px-4 py-3 rounded-xl border border-ink-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent"
                     placeholder="07123 456789"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium mb-2">Tell us about your takeaway</label>
-                  <textarea 
+                  <textarea
+                    name="message"
                     rows={3}
                     className="w-full px-4 py-3 rounded-xl border border-ink-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent resize-none"
                     placeholder="What food do you serve? Any specific needs?"
                   />
                 </div>
-                
-                <button 
+
+                <button
                   type="submit"
-                  className="w-full btn-primary"
+                  disabled={submitting}
+                  className="w-full btn-primary disabled:opacity-50"
                 >
-                  Send Message
+                  {submitting ? 'Sending...' : 'Send Message'}
                 </button>
                 
                 <p className="text-xs text-ink-500 text-center">
