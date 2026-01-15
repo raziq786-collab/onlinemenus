@@ -55,44 +55,60 @@ function Hero() {
       {/* Background decorative elements */}
       <div className="absolute top-20 right-0 w-96 h-96 bg-brand-200 rounded-full blur-3xl opacity-30" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-brand-100 rounded-full blur-3xl opacity-40" />
-      
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20">
-        <div className="max-w-3xl">
-          <div className="inline-block bg-brand-100 text-brand-700 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-up opacity-0">
-            Based in Birmingham
-          </div>
-          
-          <h1 className="font-display text-5xl md:text-7xl font-semibold text-ink-900 leading-tight mb-6 animate-fade-up opacity-0 delay-100">
-            Stop giving 30% of every order to
-            <span className="text-brand-500"> Just Eat</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-ink-600 mb-8 leading-relaxed animate-fade-up opacity-0 delay-200">
-            Get your own online ordering website. Fixed monthly fee. 
-            No commission. Your customers, your profits.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-up opacity-0 delay-300">
-            <a href="#contact" className="btn-primary text-center">
-              Get a Free Quote
-            </a>
-            <a href="#packages" className="btn-secondary text-center">
-              See Packages
-            </a>
-          </div>
-          
-          <div className="mt-12 flex items-center gap-8 text-ink-500 animate-fade-up opacity-0 delay-400">
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span>No setup fees on Starter</span>
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-12 md:py-20">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          {/* Left column - Text content */}
+          <div>
+            <div className="inline-block bg-brand-100 text-brand-700 px-4 py-2 rounded-full text-sm font-medium mb-6 animate-fade-up opacity-0">
+              Based in Birmingham
             </div>
-            <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span>Live in 2 weeks</span>
+
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-ink-900 leading-tight mb-6 animate-fade-up opacity-0 delay-100">
+              Stop giving 30% of every order to
+              <span className="text-brand-500"> Just Eat</span>
+            </h1>
+
+            <p className="text-lg sm:text-xl md:text-2xl text-ink-600 mb-8 leading-relaxed animate-fade-up opacity-0 delay-200">
+              Get your own online ordering website. Fixed monthly fee.
+              No commission. Your customers, your profits.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 animate-fade-up opacity-0 delay-300">
+              <a href="#contact" className="btn-primary text-center">
+                Get a Free Quote
+              </a>
+              <a href="#packages" className="btn-secondary text-center">
+                See Packages
+              </a>
+            </div>
+
+            <div className="mt-8 md:mt-12 flex flex-wrap items-center gap-4 md:gap-8 text-ink-500 animate-fade-up opacity-0 delay-400">
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span>No setup fees on Starter</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span>Live in 2 weeks</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column - Hero image */}
+          <div className="relative order-first md:order-last animate-fade-up opacity-0 delay-200">
+            <div className="relative">
+              {/* Decorative background for image */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-brand-200 to-brand-100 rounded-3xl opacity-50 blur-2xl" />
+              <img
+                src="/hero-image.png"
+                alt="Your Takeaway, Your Rules - Online ordering website mockup"
+                className="relative w-full h-auto rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
         </div>
